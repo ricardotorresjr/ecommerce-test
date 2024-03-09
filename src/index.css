@@ -1,13 +1,531 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+*:focus {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+
+body {
+  font-family: "Outfit", sans-serif !important;
+  font-weight: 300;
+  color: #101010;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+body.show {
+  overflow: hidden;
+}
+
+::after, ::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[contenteditable=true]:hover, [href]:hover, [tabindex]:not([tabindex="-1"]):hover, button:hover, details:hover, input:hover, select:hover, textarea:hover {
+  text-decoration: none !important;
+}
+[contenteditable=true]:focus, [href]:focus, [tabindex]:not([tabindex="-1"]):focus, button:focus, details:focus, input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+
+a, button, input, label {
+  cursor: pointer !important;
+  text-decoration: none !important;
+  color: initial;
+  transition: all 0.3s ease-in-out !important;
+}
+a:hover, button:hover, input:hover, label:hover {
+  text-decoration: none !important;
+}
+a:focus, button:focus, input:focus, label:focus {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+
+img {
+  display: block;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, span, a, li, dt, dd, label, input, textarea, button {
+  margin: 0;
+  color: #101010;
+  font-family: "Outfit", sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.content{
+  width: 95%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.heroBg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.heroBg .imgHero{
+  width: 40%;
+}
+.heroBg .imgHero img{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.heroBg .textHero{
+  background-color: rgb(255, 127, 0);
+  height: 564px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroBg .textHero .contenttextHero{
+  width: 70%;
+  margin: 0 auto;
+}
+.heroBg .textHero .contenttextHero h1{
+  font-size: 45px;
+  text-align: center;
+  color: white;
+  margin: 0 0 30px;
+}
+.heroBg .textHero .contenttextHero h2{
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  margin: 0 0 30px;
+}
+.heroBg .textHero .contenttextHero button{
+  height: 45px;
+  width: 200px;
+  font-family: "Outfit", sans-serif !important;
+  background-color: rgb(22, 19, 69);
+  color: white;
+  font-size: 18px;
+  border-radius: 15px;
+  margin: 0 auto;
+  box-shadow: none;
+  border: 2px solid rgb(22, 19, 69);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease-in-out;
+}
+.heroBg .textHero .contenttextHero button:hover{
+  background-color: transparent;
+  color: rgb(22, 19, 69);
+  font-weight: bold;
+}
+
+.products{
+  padding: 50px 0;
+}
+.products h2{
+  font-size: 35px;
+  text-align: center;
+  margin: 0 0 30px;
+}
+.products .search{
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto 10px;
+}
+.products .search input{
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 20px;
+  width: 100%;
+  cursor: text !important;
+  border: 1px solid black;
+}
+.products .sortBtns{
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.products .sortBtns button{
+  height: 30px;
+  border: 0;
+  background-color: transparent;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 48%;
+}
+.products .productsRow{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px 20px;
+}
+.products .productsRow .product{
+  width: 90%;
+  margin: 0 auto;
+}
+.products .productsRow .product h3{
+  font-size: 25px;
+  text-align: center;
+  margin: 0 auto 15px;
+}
+.products .productsRow .product .imgProduct{
+  margin: 0 auto 15px;
+}
+.products .productsRow .product .imgProduct img{
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+.products .productsRow .product p{
+  text-align: center;
+  font-size: 20px;
+  margin: 0 auto 15px;
+}
+.products .productsRow .product button{
+  height: 35px;
+  border: 0;
+  background-color: transparent;
+  border: 1px solid rgb(22, 19, 69);
+  color: rgb(22, 19, 69);
+  font-size: 16px;
+  border-radius: 15px;
+  width: 100%;
+}
+.products .productsRow .product button:first-child{
+  margin: 10px 0 0;
+}
+
+.productDetails{
+  padding: 50px 0;
+}
+.productDetails h2{
+  font-size: 45px;
+  text-align: center;
+  margin: 0 auto 30px;
+}
+
+.productDetails .productContent h3{
+  font-size: 48px;
+  margin: 0 0 30px;
+}
+.productDetails .productContent .rowProduct{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.productDetails .productContent .rowProduct .imageProduct,.productDetails .productContent .rowProduct .productInfo{
+  width: 45%;
+}
+.productDetails .productContent .rowProduct .imageProduct img{
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+.productDetails .productContent .rowProduct .productInfo .price{
+  margin: 0 0 20px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid black
+}
+.productDetails .productContent .rowProduct .productInfo .price p{
+  font-size: 18px;
+}
+.productDetails .productContent .rowProduct .productInfo .price p span{
+  display: block;
+  font-size: 40px;
+  color: rgb(255, 127, 0);
+  font-weight: bold;
+}
+.productDetails .productContent .rowProduct .productInfo .description p {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+.productDetails .productContent .rowProduct .productInfo .description p span{
+  font-size: 18px;
+  font-weight: normal;
+}
+.productDetails .productContent .rowProduct .productInfo .btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 0;
+}
+.productDetails .productContent .rowProduct .productInfo .btns button{
+  height: 45px;
+  border: 0;
+  background-color: rgb(22, 19, 69);
+  border: 1px solid rgb(22, 19, 69);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  width: 49%;
+}
+
+.cart{
+  padding: 50px 0;
+}
+.cart h2{
+  font-size: 45px;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+.cart .tableProducts{
+  width: 100%;
+}
+.cart .tableProducts table{
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 30px;
+}
+.cart .tableProducts table thead th{
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+.cart .tableProducts table tbody tr .imgTable{
+  width: 11%;
+  padding: 20px;
+}
+.cart .tableProducts table tbody tr .imgTable img{
+  width: 100px;
+  margin: 0 auto;
+  display: block;
+}
+.cart .tableProducts table tbody tr .productInfoTable{
+  padding: 20px;
+}
+.cart .tableProducts table tbody tr td .quantity{
+  display: flex;
+  align-items: center;
+}
+.cart .tableProducts table tbody tr td .quantity p{
+  font-size: 18px;
+  margin: 0 8px;
+}
+.cart .tableProducts table tbody tr td .quantity button{
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.cart .tableProducts table tbody tr td .removeProduct{
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.cart .tableProducts .total p{
+  width: 100%;
+  text-align: right;
+  font-size: 25px;
+}
+.cart .tableProducts .total p span{
+  font-weight: bold;
+}
+
+.addProduct{
+  padding: 50px 0;
+}
+.addProduct h2{
+  font-size: 45px;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+.addProduct form{
+  width: 560px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addProduct form input{
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 20px;
+  cursor: text !important;
+  border: 1px solid black; 
+}
+.addProduct form button{
+  height: 30px;
+  font-family: "Outfit", sans-serif !important;
+  background-color: rgb(22, 19, 69);
+  color: white;
+  padding: 0 10px;
+  border-radius: 15px;
+  box-shadow: none;
+  border: 2px solid rgb(22, 19, 69);
+  transition: all .3s ease-in-out;
+}
+.addProduct form button:hover{
+  background-color: transparent;
+  color: rgb(22, 19, 69);
+  font-weight: bold;
+}
+.addProduct .productsRow{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px 20px;
+}
+.addProduct .productsRow .product{
+  width: 90%;
+  margin: 0 auto;
+}
+.addProduct .productsRow .product h3{
+  font-size: 25px;
+  text-align: center;
+  margin: 0 auto 15px;
+}
+.addProduct .productsRow .product .imgProduct{
+  margin: 0 auto 15px;
+}
+.addProduct .productsRow .product .imgProduct img{
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+.addProduct .productsRow .product p{
+  text-align: center;
+  font-size: 20px;
+  margin: 0 auto 15px;
+}
+.addProduct .productsRow .product button{
+  height: 35px;
+  border: 0;
+  background-color: transparent;
+  border: 1px solid rgb(22, 19, 69);
+  color: rgb(22, 19, 69);
+  font-size: 16px;
+  border-radius: 15px;
+  width: 100%;
+}
+.addProduct .productsRow .product button:first-child{
+  margin: 10px 0 0;
+}
+
+@media (min-width: 979px) and (max-width: 1200px){
+
+  .heroBg .imgHero{
+    display: none;
+  }
+  .heroBg .textHero{
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px){
+
+  .heroBg .imgHero{
+    display: none;
+  }
+  .heroBg .textHero{
+    width: 100%;
+  }
+  .products .productsRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px 20px;
+  }
+
+}
+
+@media (max-width: 767px){
+
+  .heroBg .imgHero{
+    display: none;
+  }
+  .heroBg .textHero{
+    width: 100%;
+  }
+  .products .productsRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 20px;
+  }
+  .productDetails .productContent h3{
+    text-align: center;
+  }
+  .productDetails .productContent .rowProduct .imageProduct, .productDetails .productContent .rowProduct .productInfo{
+    width: 100%;
+  }
+  .addProduct form{
+    width: auto;
+    flex-wrap: wrap;
+  }
+  .addProduct form input,.addProduct form button{
+    width: 49%;
+    margin: 0 0 5px;
+  }
+  .addProduct .productsRow {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cart .tableProducts{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+  }
+  .cart .tableProducts table{
+    width: 780px;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .heroBg .textHero .contenttextHero h1{
+    font-size: 30px;
+  }
+  .heroBg .textHero .contenttextHero h2{
+    font-size: 22px;
+  }
+  .products .productsRow .product h3{
+    font-size: 18px;
+  }
+  .products .productsRow .product p{
+    font-size: 14px;
+  }
+  .products .productsRow .product button{
+    font-size: 14px;
+  }
+  .productDetails h2{
+    font-size: 30px;
+  }
+  .productDetails .productContent h3{
+    font-size: 30px;
+  }
+  .productDetails .productContent .rowProduct .productInfo .btns button{
+    font-size: 15px;
+  }
+
 }
